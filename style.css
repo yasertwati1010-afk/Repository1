@@ -1,5 +1,12 @@
-
 /*general site specifications + header and footer*/
+:root {
+    --card-shadow: 2px 2px 5px #999;
+}
+
+[data-bs-theme="dark"] {
+    --card-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 :lang(ar){
     font-family: "Noto Naskh Arabic", sans-serif;
     direction: rtl;
@@ -37,6 +44,7 @@
 .site-navbar ul {
     display: flex;
     justify-content: flex-end;
+    align-items: center; /* keeps the toggle button vertically centered with the links */
     gap: 24px;
     list-style: none;
     margin: 0;
@@ -70,7 +78,7 @@
     margin: 0;
 }
 .main{
-    background-color: #F7F8FA;
+    background-color: var(--bs-tertiary-bg);
     
 }
 
@@ -98,10 +106,10 @@
     
 }
 .form-panel{
-background-color: #F3F8FB;
+background-color: var(--bs-tertiary-bg);
 }
 .info-panel{
-background-color: #F7F8FA;
+background-color: var(--bs-tertiary-bg);
 }
 
 .theform ul{
@@ -125,26 +133,26 @@ background-color: #F7F8FA;
 }
 /*event.html*/
 .event_info{
-    background-color: #f8fafc;
+    background-color: var(--bs-tertiary-bg);
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     text-align: right;
 }
 #event_title{
-    color:#172554;
+    color: var(--bs-emphasis-color);
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 15px;
     text-align: right;
 }
 #event_date{
-    color:#1e3a8a;
+    color: var(--bs-secondary-color);
     font-size: 20px;
     margin-bottom: 15px;
 }
 #event_location{
-    color:#334155;
+    color: var(--bs-secondary-color);
     font-size: 20px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -152,9 +160,9 @@ background-color: #F7F8FA;
 }
 .section_title{
     text-align: center;
-    color: #172554;
+    color: var(--bs-emphasis-color);
     font-size: 24px;
-    background-color:#f8fafc ;
+    background-color: var(--bs-tertiary-bg);
 
 }
 #event_map{
@@ -164,11 +172,11 @@ background-color: #F7F8FA;
     border-radius: 12px;
     margin: 15px 0 15px auto;
     display: block;
-    border: 1px solid #053672;
+    border: 1px solid var(--bs-border-color);
     padding: 10px;
 }
 .event_description {
-    background-color:#f8fafc ;
+    background-color: var(--bs-tertiary-bg);
     text-align: right;
     font-size: 18px;
 }
@@ -179,13 +187,15 @@ background-color: #F7F8FA;
     width:30%;
     height: auto;
     margin: 20px;
-    border: 1px solid #053672;
+    border: 1px solid var(--bs-border-color);
     border-radius: 18px;
     padding: 5px;
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: var(--card-shadow);
 }
 .event_button{
-    background-color: #053672;
+    /* Was hard-coded navy (#053672), which nearly vanishes on a dark page.
+       --bs-primary is Bootstrap's blue and stays visible in both modes. */
+    background-color: var(--bs-primary);
     color: white;
     border: none;
     padding: 10px ;
@@ -195,7 +205,7 @@ background-color: #F7F8FA;
     margin-bottom: 20px;
     
 }
-#semilar_title{color:#172554;
+#semilar_title{color: var(--bs-emphasis-color);
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -215,17 +225,17 @@ background-color: #F7F8FA;
     margin: 50px;
     width: 40%;
     height: auto;
-    border: 1px solid #053672;
+    border: 1px solid var(--bs-border-color);
     text-align: center;
     border-radius: 18px;
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: var(--card-shadow);
 }
 .card_1 img, .card_2 img{
     width: 100%;
     height: auto;
     border-radius: 18px;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: var(--card-shadow);
 }
 
 
@@ -237,4 +247,9 @@ background-color: #F7F8FA;
     .title { font-size: 21px; }
     .section-title { font-size: 21px; }
     .site-navbar ul { gap: 12px; }
+}
+
+[data-bs-theme="dark"] .contact-title {
+    background-color: #0b3a4f;
+    border-bottom: 4px solid #B7A454;
 }
